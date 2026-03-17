@@ -1,7 +1,5 @@
 # SatsCASH
 
-# SatsCASH
-
 A physical bearer instrument for the Lightning Network, bringing the tactile experience of cash to digital value.
 
 SatsCASH transforms a simple NFC tag into a secure, fixed-value coin that can be verified with a tap and trusted for daily transactions. It's a system for creating "digital cash" that you can hold in your hand, give to a friend, or use to build a local economy.
