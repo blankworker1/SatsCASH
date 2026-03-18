@@ -1,1 +1,15 @@
+name = "satscash-mint"
+main = "src/index.js"
+compatibility_date = "2023-10-30"
+node_compat = true
 
+# IMPORTANT: Replace with your D1 database details
+[[d1_databases]]
+binding = "DB"
+database_name = "satscash-mint-db"
+database_id = "YOUR_MINT_DB_ID"
+
+# Bind the static assets for the UI
+[assets]
+directory = "./public"
+binding = "ASSETS"
