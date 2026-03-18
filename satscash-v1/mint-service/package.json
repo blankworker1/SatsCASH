@@ -1,1 +1,14 @@
-
+{
+  "name": "satscash-mint",
+  "version": "1.0.0",
+  "description": "SatsCASH Mint Service and UI",
+  "main": "src/index.js",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20231025.0",
+    "wrangler": "^3.0.0"
+  }
+}
