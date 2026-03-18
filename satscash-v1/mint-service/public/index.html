@@ -23,4 +23,26 @@
 
             <div id="result-section" class="hidden">
                 <h2>Verification Result</h2>
-                <div id="coin
+                <div id="coin-info" class="info-box"></div>
+                <button id="spend-coin-btn" class="action-button">Spend This Coin</button>
+                <button id="scan-another-btn" class="secondary-button">Scan Another</button>
+            </div>
+
+            <div id="spend-section" class="hidden">
+                <h2>Authorize Spend</h2>
+                <p>Enter the 6-digit PIN for this coin to authorize the transaction.</p>
+                <div id="coin-info-spend" class="info-box"></div>
+                <input type="password" id="pin-input" maxlength="6" placeholder="Enter PIN">
+                <button id="confirm-spend-btn" class="action-button">Confirm Spend</button>
+                <button id="cancel-spend-btn" class="secondary-button">Cancel</button>
+                <div id="spend-status" class="status-box"></div>
+            </div>
+        </main>
+
+        <footer>
+            <a href="/dashboard" target="_blank">View Community Dashboard</a>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
