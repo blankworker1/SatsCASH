@@ -1,1 +1,10 @@
+name = "satscash-custodian"
+main = "src/index.js"
+compatibility_date = "2023-10-30"
+node_compat = true
 
+# IMPORTANT: Replace with your D1 database details after creating it with `wrangler d1 create`
+[[d1_databases]]
+binding = "DB"
+database_name = "satscash-custodian-db"
+database_id = "YOUR_CUSTODIAN_DB_ID"
