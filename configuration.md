@@ -1,3 +1,6 @@
+# Configuration of files
+
+```
 satscash-v1/
 ├── custodian-service/  <-- A completely separate project
 │   ├── src/
@@ -9,3 +12,4 @@ satscash-v1/
     ├── src/
     ├── package.json
     └── wrangler.toml
+```
