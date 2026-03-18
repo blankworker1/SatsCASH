@@ -42,6 +42,27 @@ This model simplifies deployment and improves performance.
 
 3.  **Deployment:** A single `wrangler deploy` command from your PC would upload your Worker code and all your static assets simultaneously.
 
+**3.1. Setup D1 Databases:**
+
+Open your terminal in the custodian-service directory.
+Run wrangler d1 create satscash-custodian-db.
+Copy the resulting database_id into custodian-service/wrangler.toml.
+Create the table: wrangler d1 execute satscash-custodian-db --command="CREATE TABLE IF NOT EXISTS coin_pins (id INTEGER PRIMARY KEY AUTOINCREMENT, nfc_uid TEXT UNIQUE NOT NULL, pin_hash TEXT NOT NULL);"
+Repeat the process for the mint-service directory, creating satscash-mint-db and its table: wrangler d1 execute satscash-mint-db --command="CREATE TABLE IF NOT EXISTS coins (nfc_uid TEXT PRIMARY KEY, value_sats INTEGER NOT NULL, status TEXT NOT NULL DEFAULT 'minted', pin_hash TEXT NOT NULL);"
+
+**3.2. Deploy the Services:**
+
+Deploy the Custodian first: cd custodian-service && wrangler deploy.
+Note the URL of your deployed custodian worker (e.g., satscash-custodian.your-subdomain.workers.dev).
+Crucially, update this URL in mint-service/src/index.js.
+Deploy the Mint service: cd ../mint-service && wrangler deploy.
+
+**3.3. Mint a Test Coin:**
+
+You can use a simple curl command to the deployed Custodian service to create a PIN, then another to the Mint service to create the coin record, just as described in the create-coin.js script from the previous technical spec.
+
+Your SatsCASH V1 is now live and ready for testing.
+
 ### Benefits of This Unified Approach
 
 *   **Simplified Operations:** One `git` repo, one `wrangler.toml`, one `wrangler deploy` command. This drastically reduces complexity.
